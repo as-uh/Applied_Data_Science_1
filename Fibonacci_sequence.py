@@ -6,7 +6,7 @@ fibonacci sequence."""
 
 def fibonacci(nterms):
     # First and second term of the fibonacci Sequence
-    term0=0 
+    term0=1
     term1=1
     
     # Check if there is any term in the sequence
