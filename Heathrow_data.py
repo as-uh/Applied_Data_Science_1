@@ -1,24 +1,4 @@
-import requests
-import numpy as np 
-import pandas as pd 
 
-# Heathrow data URL
-url= "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/UK.txt"
-
-# Requesting URL and saving it as txt file
-request = requests.get(url)
-data= request.text
-
-# convert txt file into array 
-lines= data.split('\n')
-
-#create empty list to store data
-temp_data=[]
-for line in lines[7:-1]:
-    temp_data.append(line.split())
-
-# Converting to dataframe    
-temp_df= pd.DataFrame(temp_data)
 
 # Creating month list
 months=['January','Feburary','March','April',
@@ -55,11 +35,12 @@ for i in range(1,13):
 # Converting dictionary to dataframe
 rolling=pd.DataFrame(rolling_average)
 
+for i in range()
+rainfall= np.array(rolling[1])
+
 # Saving Data frame into txt file
 rolling.to_csv("rolling_average.txt", header=True, index= False,
      sep= "\t")
 
-# Saving Dataframe into binary format
-rolling.to_csv("rolling_average.dat", header=True, index= False, 
-    sep= "\t")
-    
+# Saving Dataframe into binary file
+rolling.to_stata("rolling_average.dta")

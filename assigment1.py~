@@ -1,0 +1,17 @@
+import requests
+import numpy as np
+import pandas as pd 
+import matplotlib.pyplot as plt
+
+url="https://data.ny.gov/resource/skw8-wkzf.json"
+request = requests.get(url)
+
+data= request.text
+
+lines= data.split("\n")
+
+data=[]
+for line in lines:
+    data.append(line.split("\t"))
+
+print(data)
